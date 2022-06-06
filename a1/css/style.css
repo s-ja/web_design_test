@@ -23,6 +23,7 @@ body{
     color: #333333;
     background: #ffffff;
     width: 100%;
+    position: relative;
 }
 .d_none{
     display: none;
@@ -34,18 +35,46 @@ body{
 
 #popup{
     position: absolute;
+    z-index: 1000;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 40%;
-    height: 350px;
+    width: 600px;
+    height: 400px;
+    background: #fbe2ff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 30px;
+}
+#popup h1{
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 1.825em;
+    background: #7d0090;
+    padding: 10px;
+    border-radius: 10px;
+}
+#popup p{
+    font-weight: 700;
+    padding: 10px;
+}
+#popup button{
+    background: #7d0090;
+    border: 0;
+    color: #ffffff;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
 }
 
 header{
     height: 100px;
     display: flex;
     justify-content: space-between;
-    /* padding: 50px; */
     align-items: center;
 }
 .logo{
@@ -55,13 +84,13 @@ header{
 .gnb{
     display: flex;
     font-size: 25px;
-    /* color: aliceblue; */
     font-weight: 900;
     margin-top: 75px;
     text-align: center;
     width: 640px;
     align-items: center;
     justify-content: space-evenly;
+    z-index: 1000;
 }
 .gnb>li{
     position: relative;
@@ -77,7 +106,7 @@ header{
 .lnb{
     display: none;
     position: absolute;
-    top: 35px;
+    top: 30px;
     font-size: .8em;
     font-weight: 900;
     width: 100%;
@@ -92,17 +121,14 @@ header{
     background: #DF00FF;
 }
 
-.slide{
+.slide_wrap{
     height: 300px;
-    position: relative;
-    margin-bottom: 20px;
+    overflow: hidden;
 }
-.slide li{
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* transform: translate(-50%, -50%); */
+.slide{
+    transition: all ease-in-out .3s;
 }
+
 .main{
     height: 200px;
     display: flex;
@@ -115,6 +141,7 @@ header{
     /* flex: 1; */
     text-align: center;
     height: 100%;
+    overflow: hidden;
 }
 .board_title{
     display: flex;
@@ -133,11 +160,23 @@ header{
     text-align: left;
 }
 .notice{
-    padding: 10px;
     display: flex;
     flex-direction: column;
     row-gap: 5px;
+    background: #ffffff;
+    padding: 20px;
 }
+.gallery{
+    display: none;
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.gallery img{
+    width: calc(400px / 3 - 30px);
+}
+
 .banner{
     margin: 0 auto;
 }
@@ -180,6 +219,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    column-gap: 10px;
 }
 .sns img{
     width: 50px;
